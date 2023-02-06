@@ -1,0 +1,26 @@
+<div id="tableFavoriteCoins">
+    <table class="table text-light text-center fs-5">
+        <thead>
+          <tr>
+            <th scope="col">Imagen</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Símbolo</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Capitalización</th>
+            <th scope="col">Volumen</th>
+            <th scope="col">Precio más alto (24h)</th>
+            <th scope="col">Precio más bajo (24h)</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody *ngIf="ApiAccessService.favouritesCoinsList.length > 0; else elseBlock">
+          <tr app-table-coin  *ngFor="let coin of ApiAccessService.favouritesCoinsList" [coin]="coin" (eventoBorrarMoneda)="deleteFavouriteCoin($event)"></tr>
+        </tbody>
+        <ng-template #elseBlock>
+          <tbody>
+            <tr><td colspan="9" class="text-center text-uppercase fs-5">No tienes ninguna moneda favorita</td></tr>
+          </tbody>
+        </ng-template>
+      </table>
+</div>

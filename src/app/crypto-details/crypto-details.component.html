@@ -1,0 +1,46 @@
+<div class="container text-light" id="coinDetailsContainer">
+    <div class="row" id="flexRow">
+        <div class="col-6" id="col6">
+            <div class="row">
+                <div id="coinDetailsContainer-mainInfo" class="col">
+                    <img [src]="APIAccessService.coinDetails.image.large" alt="">
+                    <div id="coinDetailsContainer-name">
+                        <h1>{{APIAccessService.coinDetails.name}}</h1>
+                        <h2 id="coinSymbol">{{APIAccessService.coinDetails.symbol}}</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <table class="table text-light">
+                    <tbody>
+                        <tr>
+                            <td>Precio del {{APIAccessService.coinDetails.name}}</td>
+                            <th>{{APIAccessService.coinDetails.market_data.current_price.eur}} €</th>
+                        </tr>
+                        <tr>
+                            <td>Mínimo en 24 h / Máximo en 24 h</td>
+                            <th>{{APIAccessService.coinDetails.market_data.low_24h.eur}} € / {{APIAccessService.coinDetails.market_data.high_24h.eur}} €</th>
+                        </tr>
+                        <tr>
+                            <td>Volumen de comercio</td>
+                            <th>{{APIAccessService.coinDetails.market_data.total_volume.eur}} €</th>
+                        </tr>
+                        <tr>
+                            <td>Clasificación de capitalización de mercado</td>
+                            <th>{{APIAccessService.coinDetails.market_data.market_cap_rank}}</th>
+                        </tr>
+                        <tr>
+                            <td>Cap. de mercado</td>
+                            <th>{{APIAccessService.coinDetails.market_data.market_cap.eur}} €</th>
+                        </tr>
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+        <div id="coinDetailsContainer-moreInfo" class="col-6">
+            <div id="coinDetailsContainer-graphic">
+                <canvasjs-chart [options]="chartOptions" [styles]="{width: '105%', height: '460px'}" (chartInstance)="getChartInstance($event)"></canvasjs-chart>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "cryptotracker-c917f": {
+      "hosting": {
+        "crypto": [
+          "cryptotracker-c917f"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "cryptotracker-c917f"
+  }
+}

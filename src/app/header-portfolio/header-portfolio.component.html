@@ -1,0 +1,19 @@
+<div id="portfolioHeader">
+    <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0" id="coinsAccordion">
+        <ngb-panel title="Coins List" class="text-center">
+            <ng-template ngbPanelContent>
+                <div class="coinsSection">
+                    <app-crypto-card *ngFor="let coin of ApiAccessService.coinsList | slice: (page-1) * pageSize : page * pageSize" [coin]="coin" (click)="addCoinToFavourite(coin.id)"></app-crypto-card>
+                </div>
+                
+                <div class="coinsPagination">
+                    <ngb-pagination
+                    [(page)]="page"
+                    [pageSize]="pageSize"
+                    [collectionSize]="ApiAccessService.coinsList.length">
+                  </ngb-pagination>
+                </div>
+            </ng-template>
+        </ngb-panel>
+    </ngb-accordion>
+</div>

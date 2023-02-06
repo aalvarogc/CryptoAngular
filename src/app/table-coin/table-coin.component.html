@@ -1,0 +1,10 @@
+<td><img [src]="coin.image" alt="" class="imgCoin"></td>
+<td>{{ coin.name }}</td>
+<td>{{ coin.symbol }}</td>
+<td>{{ coin.price }}</td>
+<td>{{ coin.capitalization }}</td>
+<td>{{ coin.volumen }}</td>
+<td>{{ coin.highest_price }}</td>
+<td>{{ coin.lowest_price }}</td>
+<td class="lastTd"><i class="fa-solid fa-trash trashIcon" title="Quitar de favoritos" (click)="eventoBorrarCoin()"></i></td>
+<td class="lastTd"><i [routerLink]="['/details', coin.coinID]" class="fa-solid fa-circle-info infoIcon" title="Más información"></i></td>

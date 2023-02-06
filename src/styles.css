@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Advent+Pro:wght@400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Advent Pro', sans-serif;
+}
+
+body{
+    background-image: url('https://p4.wallpaperbetter.com/wallpaper/42/36/26/bitcoin-cryptocurrency-technology-wallpaper-preview.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    backdrop-filter: blur(4px);
+}
+
+
+/* NAV */
+.navbar{
+    background-color: rgba(0, 0, 0, 0.642);
+    padding: .7em;
+}
+#pageTitle{
+    /* color: #b47b02; */
+    font-size: 2em;
+    color: white;
+    font-weight: 700;
+    letter-spacing: 5px;
+    cursor: pointer;
+}
+#loginIcon, #logoutIcon{
+    color: white;
+    font-size: 1.5em;
+}
+#loginIcon:hover, #logoutIcon:hover{
+    color: #b47b02;
+    transition: all .2s ease-in-out;
+    cursor: pointer;
+}
+#navLinks{
+    display: flex;
+    align-items: center;
+    gap: 3em;
+}
+#portfolioLink{
+    position: relative;
+    color: white;
+    font-size: 1.5em;
+}
+#portfolioLink:hover{
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+    color: #b47b02;
+}
+
+/* LANDING PAGE */
+#landingPage-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.752);
+    width: 80vw;
+    height: 70vh;
+    padding: 4em;
+    margin: 0 auto;
+    margin-top: 5em;
+    margin-bottom: 5em;
+    color: white;
+}
+#landingPage-content{
+    display: flex;
+    flex-direction: column;
+    gap: .7em;
+}
+#linkPort{
+    font-weight: bold;
+    position: relative;
+    font-size: 1.05em;
+    width: fit-content;
+}
+#linkPort:hover{
+    transition: all .2s ease-in-out;
+    color: #b47b02;
+    cursor: pointer;
+}
+#linkPort::after, #portfolioLink::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: .1rem;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.2s ease-in-out;
+}
+#linkPort:hover::after, #portfolioLink:hover::after{
+    transform: scaleX(1);
+    background-color: #b47b02;
+}
+#landingPage-title{
+    font-size: 3.5em;
+    width: 80%;
+    font-weight: 600;
+    letter-spacing: 3px;
+}
+#landingPage-subtitle{
+    width: 80%;
+    font-size: 1.4em;
+    letter-spacing: 3px;
+}
+#getStarted{
+    display: flex;
+}
+#emailForm{
+    display: flex;
+    gap: .3em;
+}
+
+/* COINS SECTION */
+.coinsSection{
+    margin: 0 auto;
+    margin-top: 5em;
+    margin-bottom: 5em;
+    width: 70vw;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1em;
+}
+
+/* COIN CARD */
+.coinCard{
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 5px;
+    border: 1px solid black;
+    padding: .2em;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+}
+.coinCard:hover{
+    scale: 1.05;
+}
+.coinCard-img{
+    width: 10%;
+    margin: 0;
+    height: fit-content;
+}
+.coinCard-img img{
+    width: 100%;
+}
+
+/* FOOTER */
+#footer{
+    background-color: rgba(0, 0, 0, 0.642);
+    color: white;
+}
+
+#footerDiv{
+    width: 100%;
+}
+
+/* LOGIN */
+.loginContainer{
+    width: 70vw;
+    margin: 0 auto;
+}
+#otherWay{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#formLink{
+    display: block;
+    text-align: center;
+}
+
+/* HEADER PORTFOLIO */
+.coinsPagination{
+    width: fit-content;
+    margin: 0 auto;
+}
+#portfolioHeader, #tableFavoriteCoins{
+    width: 84vw;
+    margin: 0 auto;
+    margin-top: 3em;
+}
+.accordion-button{
+    text-transform: uppercase;
+}
+
+/* BODY PORTFOLIO */
+#tableFavoriteCoins{
+    background-color: rgba(0, 0, 0, 0.752);
+    padding: 2em;
+    margin-bottom: 3em;
+}
+
+/* TABLE COIN */
+.trashIcon{
+    color: #e91b0c;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+}
+.infoIcon{
+    color: #1D6DDD;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+}
+.trashIcon:hover, .infoIcon:hover{
+    filter: brightness(1.2);
+    scale: 1.1;
+}
+.lastTd{
+    margin: 0 auto;
+    text-align: center;
+}
+.imgCoin{
+    width: 2em;
+}
+
+/* COIN DETAILS */
+#coinDetailsContainer{
+    margin-top: 5em;
+    margin-bottom: 5em;
+    background-color: rgba(0, 0, 0, 0.752);
+}
+#flexRow{
+    display: flex;
+    justify-content: space-between;
+}
+#col6{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 50%;
+}
+#coinDetailsContainer-mainInfo{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+#coinDetailsContainer-mainInfo img{
+    width: 15%;
+}
+#coinSymbol{
+    color: gray;
+}
